@@ -1,9 +1,9 @@
-package com.gravypod.starmadeapi.entity;
+package org.starmod.api.entity;
 
 import java.util.UUID;
 
-import com.gravypod.starmadeapi.world.Location;
-import com.gravypod.starmadeapi.world.Universe;
+import org.starmod.api.world.Location;
+import org.starmod.api.world.Universe;
 
 public abstract class Entity {
 

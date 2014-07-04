@@ -1,13 +1,13 @@
-package com.gravypod.starmadeapi.network;
+package org.starmod.api.network;
 
 import java.io.IOException;
 import java.net.Socket;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 
-import com.gravypod.starmadeapi.entity.Entity;
-import com.gravypod.starmadeapi.entity.Player;
-import com.gravypod.starmadeapi.world.Universe;
+import org.starmod.api.entity.Entity;
+import org.starmod.api.entity.Player;
+import org.starmod.api.world.Universe;
 
 /**
  * Created when a new socket is accepted into the network.

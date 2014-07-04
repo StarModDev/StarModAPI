@@ -1,4 +1,4 @@
-package com.gravypod.starmadeapi.world;
+package org.starmod.api.world;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
-import com.gravypod.starmadeapi.entity.Player;
+import org.starmod.api.entity.Player;
 
 public class Universe {
 	

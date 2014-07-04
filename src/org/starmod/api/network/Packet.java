@@ -1,4 +1,4 @@
-package com.gravypod.starmadeapi.network;
+package org.starmod.api.network;
 
 public enum Packet {
 	SERVER_INFO((byte) 42, (byte) 0, (byte) 111, Byte.TYPE, Float.TYPE, String.class, String.class, Long.TYPE, Integer.TYPE, Integer.TYPE)

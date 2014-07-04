@@ -1,9 +1,9 @@
-package com.gravypod.starmadeapi.entity;
+package org.starmod.api.entity;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import com.gravypod.starmadeapi.network.NetworkManager;
-import com.gravypod.starmadeapi.network.StarmadePacket;
+import org.starmod.api.network.NetworkManager;
+import org.starmod.api.network.StarmadePacket;
 
 
 

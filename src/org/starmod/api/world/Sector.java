@@ -1,4 +1,4 @@
-package com.gravypod.starmadeapi.world;
+package org.starmod.api.world;
 
 public class Sector {
 

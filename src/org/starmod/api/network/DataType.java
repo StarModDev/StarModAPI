@@ -1,4 +1,4 @@
-package com.gravypod.starmadeapi.network;
+package org.starmod.api.network;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

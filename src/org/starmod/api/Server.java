@@ -1,8 +1,8 @@
-package com.gravypod.starmadeapi;
+package org.starmod.api;
 
 import java.net.InetSocketAddress;
 
-import com.gravypod.starmadeapi.world.Universe;
+import org.starmod.api.world.Universe;
 
 public abstract class Server {
 	
