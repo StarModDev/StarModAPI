@@ -17,9 +17,7 @@ public enum Packet {
 			throw new IllegalArgumentException("Incorrect paramaters passed to make for packet " + name());
 		}
 		
-		
-		
-		return null;
+		return new StarmadePacket(type, order, commandId, commandType, params);
 	}
 	
 	private boolean checkParams(Object[] params) {
