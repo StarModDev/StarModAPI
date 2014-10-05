@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.TimeUnit;
 
 /**
  * EventManager handles unregistering, registering, and firing events.
@@ -12,6 +14,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class EventManager {
 
+	private static final ForkJoinPool pool = new ForkJoinPool(10);
+	
 	private static Map<Class<? extends Event>, HandlerList> eventListenrs;
 
 	static {
@@ -25,17 +29,15 @@ public class EventManager {
 	/**
 	 * Fire an event. The {@link Event} object will be dispatched to all of the listening {@link EventHandler}s
 	 * @param event
+	 * @return 
 	 */
 	public static void fire(Event event) {
-
+		
 		HandlerList list = eventListenrs.get(event.getClass());
-
 		if (list == null) { // There are no listeners
 			return;
 		}
-
 		list.fire(event);
-
 	}
 
 	/**
@@ -117,5 +119,10 @@ public class EventManager {
 
 		return registers;
 
+	}
+
+	public static void shutdown() {
+		pool.shutdown();
+		pool.awaitQuiescence(10, TimeUnit.SECONDS);
 	}
 }
