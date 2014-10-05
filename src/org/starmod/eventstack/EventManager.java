@@ -102,9 +102,8 @@ public class EventManager {
 				throw new IllegalStateException("Paramater of " + m + " is not an event");
 			}
 
-			@SuppressWarnings("unchecked")
 			// Checked above at "if (arguments[0].isAssignableFrom(Event.class))"
-			Class<? extends Event> event = (Class<? extends Event>) arguments[0]; // The event we are going to listen to
+			Class<? extends Event> event = arguments[0].asSubclass(Event.class); // The event we are going to listen to
 			EventRegister register = new EventRegister(m, instance, handler, event); // The EventRegister object for this method
 
 			if (!eventListenrs.containsKey(event)) { // Creates the HandlerList for this given event if there is none
