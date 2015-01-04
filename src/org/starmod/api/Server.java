@@ -2,20 +2,29 @@ package org.starmod.api;
 
 import java.net.InetSocketAddress;
 
-import org.starmod.api.world.Universe;
+public interface Server {
 
-public abstract class Server {
-	
 	/**
-	 * Get the {@link Universe} for the server.
-	 * @return
+	 * Gets an array of all the online players
+	 * @return array of online players
 	 */
-	public abstract Universe getUniverse();
-	
+	public Player[] getPlayers();
+
 	/**
-	 * Get the address the server is running on.
-	 * @return
+	 * Get the address the server is running on
+	 * @return socket address server is bound to
 	 */
-	public abstract InetSocketAddress getServerAddress();
+	public InetSocketAddress getAddress();
+
+	/**
+	 * Sends a message as the server with the prefix [SERVER]
+	 * @param message to be sent to all clients
+	 */
+	public void sendServerMessage(String message);
+
+	/**
+	 * Gracefully shutdown down the server and the network server
+	 */
+	public void shutdown();
 	
 }

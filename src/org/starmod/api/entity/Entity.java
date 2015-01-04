@@ -1,18 +1,22 @@
 package org.starmod.api.entity;
 
-import java.util.UUID;
-
 import org.starmod.api.world.Location;
-import org.starmod.api.world.Universe;
 
-public abstract class Entity {
+/**
+ * Represents a in-game entity
+ */
+public interface Entity {
 
-	public abstract UUID getUUID();
-	
-	public abstract String getName();
-	
-	public abstract Location getLocation();
-	
-	public abstract Universe getUniverse();
+	/**
+	 * Gets the name of the entity
+	 * @return name of entity
+	 */
+	public String getName();
+
+	/**
+	 * Gets the current location of the entity
+	 * @return entity's location
+	 */
+	public Location getLocation();
 	
 }
