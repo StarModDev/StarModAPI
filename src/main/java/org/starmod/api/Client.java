@@ -1,11 +1,11 @@
 package org.starmod.api;
 
-import org.starmod.api.entity.OnlinePlayer;
+import org.starmod.api.entity.Player;
 
 /**
  * Represents a Player, online or offline
  */
-public interface Player {
+public interface Client {
 
 	/**
 	 * Gets the name of the player in-game, or if online last known name
@@ -41,6 +41,6 @@ public interface Player {
 	 * Gets the object of the online player, if offline null
 	 * @return player object, otherwise null
 	 */
-	OnlinePlayer getOnlinePlayer();
+	Player getPlayer();
 
 }

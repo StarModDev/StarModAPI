@@ -8,7 +8,7 @@ public interface Server {
 	 * Gets an array of all the online players
 	 * @return array of online players
 	 */
-	public Player[] getPlayers();
+	public Client[] getPlayers();
 
 	/**
 	 * Get the address the server is running on
