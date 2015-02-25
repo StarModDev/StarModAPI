@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+group = 'org.starmod'
+version = '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+}
