@@ -1,11 +1,12 @@
 package org.starmod.api;
 
 import org.starmod.api.entity.Player;
+import org.starmod.api.util.Identifiable;
 
 /**
  * Represents a Player, online or offline
  */
-public interface Client {
+public interface Client extends Identifiable {
 
 	/**
 	 * Gets the name of the player in-game, or if online last known name

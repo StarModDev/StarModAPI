@@ -18,5 +18,12 @@ public interface Entity {
 	 * @return entity's location
 	 */
 	public Location getLocation();
+
+	/**
+	 * Gets the currently targeted entity, otherwise null
+	 * 
+	 * @return targeted entity
+	 */
+	public Entity getTarget();
 	
 }
