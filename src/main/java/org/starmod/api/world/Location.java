@@ -5,7 +5,7 @@ import com.flowpowered.math.vector.Vector3f;
 /**
  * Represents a 3-dimensional position in a sector
  */
-public class Location extends Vector3f {
+public class Location {
 
 	private final Sector sector;
 	private final Vector3f position;
@@ -120,7 +120,7 @@ public class Location extends Vector3f {
 
 	/**
 	 * Create a new instance with a new position.
-	 * 
+	 *
 	 * @param position the new position
 	 * @return a new instance
 	 */
