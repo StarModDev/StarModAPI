@@ -1,44 +1,41 @@
 package org.starmod.api.world;
 
+import com.flowpowered.math.vector.Vector3f;
+
 /**
  * Represents a 3-dimensional position in a sector
  */
-public class Location {
+public class Location extends Vector3f {
 
-	private Sector sector;
-	private float x, y, z, pitch, yaw;
+	private final Sector sector;
+	private final Vector3f position;
 
 	/**
-	 * Constructs a location with given coordinates
+	 * Constructs a location with given coordinates.
+	 *
 	 * @param sector the world in which the location is in
 	 * @param x x-coordinate of the new location
 	 * @param y x-coordinate of the new location
 	 * @param z x-coordinate of the new location
 	 */
 	public Location(Sector sector, float x, float y, float z) {
-		this(sector, x, y, z, 0, 0);
+		this(sector, new Vector3f(x, y, z));
 	}
 
 	/**
-	 * Constructs a location with given coordinates and direction
+	 * Constructs a location with given coordinates and direction.
+	 *
 	 * @param sector the world in which the location is in
-	 * @param x x-coordinate of the new location
-	 * @param y x-coordinate of the new location
-	 * @param z x-coordinate of the new location
-	 * @param pitch rotation on the x-axis of the new location, in degrees
-	 * @param yaw rotation on the y-axis of the new location, in degrees
+	 * @param position the vector position of the location
 	 */
-	public Location(Sector sector, float x, float y, float z, float pitch, float yaw) {
+	public Location(Sector sector, Vector3f position) {
 		this.sector = sector;
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		this.pitch = pitch;
-		this.yaw = yaw;
+		this.position = position;
 	}
 
 	/**
-	 * Get the sector that the location is in
+	 * Get the sector that the location is in.
+	 *
 	 * @return sector that contains this location
 	 */
 	public Sector getSector() {
@@ -46,102 +43,98 @@ public class Location {
 	}
 
 	/**
-	 * Sets the sector that the location is in
-	 * @param sector to move location to
+	 * Create a new instance with a new sector.
+	 *
+	 * @param sector the new sector
+	 * @return a new instance
 	 */
-	public void setSector(Sector sector) {
-		this.sector = sector;
+	public Location setSector(Sector sector) {
+		return new Location(sector, position);
 	}
 
 	/**
-	 * Gets the x-coordinate of this location
+	 * Gets the x-coordinate of this location.
+	 *
 	 * @return location's x-coordinate
 	 */
 	public float getX() {
-		return x;
+		return position.getX();
 	}
 
 	/**
-	 * Sets the x-coordinate of this location
-	 * @param x new x-coordinate
+	 * Create a new instance with a new x-coordinate.
+	 *
+	 * @param x the new x-coordinate
+	 * @return a new instance
 	 */
-	public void setX(float x) {
-		this.x = x;
+	public Location setX(float x) {
+		return setPosition(new Vector3f(x, getY(), getZ()));
 	}
 
 	/**
-	 * Gets the y-coordinate of this location
+	 * Gets the y-coordinate of this location.
+	 *
 	 * @return location's x-coordinate
 	 */
 	public float getY() {
-		return y;
+		return position.getY();
 	}
 
 	/**
-	 * Sets the z-coordinate of this location
-	 * @param y new x-coordinate
+	 * Create a new instance with a new y-coordinate.
+	 *
+	 * @param y the new y-coordinate
+	 * @return a new instance
 	 */
-	public void setY(float y) {
-		this.y = y;
+	public Location setY(float y) {
+		return setPosition(new Vector3f(getX(), y, getZ()));
 	}
 
 	/**
-	 * Gets the z-coordinate of this location
+	 * Gets the z-coordinate of this location.
+	 *
 	 * @return location's x-coordinate
 	 */
 	public float getZ() {
-		return z;
+		return position.getZ();
 	}
 
 	/**
-	 * Sets the z-coordinate of this location
-	 * @param z new x-coordinate
+	 * Create a new instance with a new z-coordinate.
+	 *
+	 * @param z the new z-coordinate
+	 * @return a new instance
 	 */
-	public void setZ(float z) {
-		this.z = z;
+	public Location setZ(float z) {
+		return setPosition(new Vector3f(getX(), getY(), z));
 	}
 
 	/**
-	 * Get the pitch of the location in degrees
-	 * @return degree of pitch
+	 * Returns the underlying vector position.
+	 *
+	 * @return the underlying vector
 	 */
-	public float getPitch() {
-		return pitch;
+	public Vector3f getPosition() {
+		return position;
 	}
 
 	/**
-	 * Sets the pitch of the location in degrees
-	 * @param pitch new pitch
+	 * Create a new instance with a new position.
+	 * 
+	 * @param position the new position
+	 * @return a new instance
 	 */
-	public void setPitch(float pitch) {
-		this.pitch = pitch;
-	}
-
-	/**
-	 * Get the yaw of the location in degrees
-	 * @return degree of yaw
-	 */
-	public float getYaw() {
-		return yaw;
-	}
-
-	/**
-	 * Sets the yaw of the location in degrees
-	 * @param yaw new yaw
-	 */
-	public void setYaw(float yaw) {
-		this.yaw = yaw;
+	public Location setPosition(Vector3f position) {
+		if (this.position == position)
+			return this;
+		return new Location(sector, position);
 	}
 
 	@Override
 	public String toString() {
 		return "Location{" +
 			"sector=" + sector +
-			", x=" + x +
-			", y=" + y +
-			", z=" + z +
-			", pitch=" + pitch +
-			", yaw=" + yaw +
+			", position=" + position.toString() +
 			'}';
 	}
 

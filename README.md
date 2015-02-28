@@ -1,2 +1,2 @@
-# StarmadeServer-API
+# StarModAPI
 A StarMade mod API

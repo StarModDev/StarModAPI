@@ -9,4 +9,5 @@ repositories {
 
 dependencies {
     testCompile 'junit:junit:4.11'
+    compile 'com.flowpowered:flow-math:1.0.0'
 }
