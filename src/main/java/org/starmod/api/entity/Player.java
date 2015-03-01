@@ -22,5 +22,26 @@ public interface Player extends Human, Client {
 	 * @param spawnPoint new spawn point of the player
 	 */
 	public void setSpawnPoint(Location spawnPoint);
+
+	/**
+	 * Return the amount of latency in milliseconds.
+	 *
+	 * @return the ms of latency
+	 */
+	public int getPing();
+
+	/**
+	 * Returns whether the player is in god mode or not.
+	 *
+	 * @return true if the player is in god mode
+	 */
+	public boolean isGod();
+
+	/**
+	 * Sets the player's god mode status.
+	 *
+	 * @param god the new god mode status
+	 */
+	public void setGod(boolean god);
 	
 }
