@@ -4,9 +4,9 @@ import java.io.File;
 import java.util.Set;
 import java.util.concurrent.ConcurrentSkipListSet;
 
-import org.starmod.eventstack.EventHandler;
-import org.starmod.eventstack.EventManager;
-import org.starmod.eventstack.EventRegister;
+import org.starmod.api.event.EventHandler;
+import org.starmod.api.event.EventManager;
+import org.starmod.api.event.EventRegister;
 
 public abstract class Plugin {
 
