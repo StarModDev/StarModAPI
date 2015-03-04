@@ -1,6 +1,9 @@
 package org.starmod.api;
 
+import org.starmod.api.entity.Player;
+
 import java.net.InetSocketAddress;
+import java.util.List;
 
 public interface Server {
 
@@ -8,7 +11,7 @@ public interface Server {
 	 * Gets an array of all the online players
 	 * @return array of online players
 	 */
-	public Client[] getPlayers();
+	public List<Player> getPlayers();
 
 	/**
 	 * Get the address the server is running on
