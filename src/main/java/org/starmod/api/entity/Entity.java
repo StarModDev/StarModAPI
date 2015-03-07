@@ -56,5 +56,12 @@ public interface Entity {
 	 * @return targeted entity
 	 */
 	public Entity getTarget();
+
+	/**
+	 * Sets a new target of the Entity.
+	 *
+	 * @param target the new targeted entity
+	 */
+	public void setTarget(Entity target);
 	
 }

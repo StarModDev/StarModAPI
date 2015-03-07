@@ -2,21 +2,41 @@ package org.starmod.api.world;
 
 public class Sector {
 
+	private int id;
 	private StarSystem system;
 	private int x, y, z;
 
 	/**
 	 * Constructs a sector with given coordinates
+	 * @param id the ID of the sector
 	 * @param system StarSystem the sector is in
 	 * @param x x-coordinate of the sector
 	 * @param y x-coordinate of the sector
 	 * @param z x-coordinate of the sector
 	 */
-	public Sector(StarSystem system, int x, int y, int z) {
+	public Sector(int id, StarSystem system, int x, int y, int z) {
 		this.system = system;
 		this.x = x;
 		this.y = y;
 		this.z = z;
+	}
+
+	/**
+	 * Gets the ID of the sector.
+	 *
+	 * @return ID of the sector
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * Sets the ID of the sector.
+	 *
+	 * @param id - ID of the sector
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	/**
