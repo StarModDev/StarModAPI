@@ -1,13 +1,14 @@
 package org.starmod.api.entity;
 
 import org.starmod.api.Client;
-import org.starmod.api.entity.living.Human;
+import org.starmod.api.item.inventory.InventoryHolder;
+import org.starmod.api.util.Savable;
 import org.starmod.api.world.Location;
 
 /**
  * Represents an online player entity
  */
-public interface Player extends Human, Client {
+public interface Player extends Living, Client, InventoryHolder, Savable {
 
 	/**
 	 * Gets the current spawn point of the player

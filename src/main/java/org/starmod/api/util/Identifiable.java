@@ -1,7 +1,5 @@
 package org.starmod.api.util;
 
-import java.util.UUID;
-
 public interface Identifiable {
 
 	/**
@@ -9,6 +7,6 @@ public interface Identifiable {
 	 *
 	 * @return unique identifier
 	 */
-	public UUID getUniqueId();
+	public int getId();
 
 }

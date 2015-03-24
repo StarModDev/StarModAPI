@@ -1,18 +1,12 @@
 package org.starmod.api.world;
 
 import com.flowpowered.math.vector.Vector3i;
+import org.starmod.api.util.Identifiable;
 
 /**
  * A sector contained in a {@link StarSystem}
  */
-public interface Sector {
-
-    /**
-     * Gets the identifier of the sector
-     *
-     * @return the sector ID
-     */
-    public int getId();
+public interface Sector extends Identifiable {
 
 	/**
 	 * Gets the star system the sector is in

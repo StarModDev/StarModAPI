@@ -1,9 +1,9 @@
-package org.starmod.api.entity.living;
+package org.starmod.api.entity;
 
 /**
  * Represents a living entity on the server.
  */
-public interface Living {
+public interface Living extends Entity {
 
 	/**
 	 * Removes health by a given amount.
