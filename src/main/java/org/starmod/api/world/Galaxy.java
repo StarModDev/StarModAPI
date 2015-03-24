@@ -1,5 +1,7 @@
 package org.starmod.api.world;
 
+import com.flowpowered.math.vector.Vector3i;
+
 /**
  * Represents a Galaxy, which contains {@link org.starmod.api.world.Sector}s
  */
@@ -10,21 +12,18 @@ public interface Galaxy {
 	 */
 	public static final int SIZE = 128;
 
-	/**
-	 * Gets the seed used to generate this Galaxy.
-	 *
-	 * @return the seed used to generate
-	 */
-	public long getSeed();
+    /**
+     * Gets the identifier of the galaxy
+     *
+     * @return the galaxy ID
+     */
+    public int getId();
 
-	/**
-	 * Gets the {@link org.starmod.api.world.Sector} at the given coordinates.
-	 *
-	 * @param x x-coordinate of the sector
-	 * @param y y-coordinate of the sector
-	 * @param z z-coordinate of the sector
-	 * @return the Sector at the given coordinates
-	 */
-	public Sector getSectorAt(int x, int y, int z);
+    /**
+     * Gets the location of the galaxy
+     *
+     * @return the location of the galaxy
+     */
+    public Vector3i getLocation();
 
 }
